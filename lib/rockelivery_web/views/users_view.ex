@@ -1,15 +1,7 @@
-defmodule RockeliveryWeb.UsersView do
+defmodule RockeliveryWeb.UserView do
   use RockeliveryWeb, :view
 
-  alias Rockelivery.User
-
-  def render("create.json", %{user: %User{} = user}) do
-    %{
-      message: "User created!",
-      user: %{
-        id: user.id,
-        name: user.name
-      }
-    }
+  def render("show.json", %{user: user}) do
+    %{name: user.name, address: user.address}
   end
 end
